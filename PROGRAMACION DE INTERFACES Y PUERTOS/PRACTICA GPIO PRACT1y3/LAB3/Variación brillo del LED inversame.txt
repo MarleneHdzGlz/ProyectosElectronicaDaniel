@@ -1,0 +1,10 @@
+// Variación: brillo del LED inversamente proporcional a la luz 
+// (más oscuro = LED más brillante) 
+ 
+void loop() { 
+  int raw     = analogRead(LDR_PIN); 
+  int brillo  = map(raw, 0, 1023, 255, 0); // Invertido 
+  analogWrite(LED_PIN, brillo);              // PWM en pin 9 
+  Serial.println(raw); 
+  delay(100); 
+} 
